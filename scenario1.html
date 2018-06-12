@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8" />
+    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="css/goku.css" />
+    <link rel="stylesheet" type="text/css" href="css/scenario.css" />
+    <script type="text/javascript" src="js/jquery-3.3.1.min.js"></script>
+</head>
+
+<body>
+
+
+    <div id="wrapper">
+        <div id="content">Your text
+            <div id="arvore_do_mal"></div>
+            <!-- <div id="npc" ></div> -->
+            <div class="player">
+                <div class="goku"></div>
+            </div>
+        </div>
+    </div>
+
+
+    <script>
+
+        var player = {
+            xInitialPosition: 100,
+            xCurrentPosition: 100,
+            velocity: 7,
+        }
+
+
+        $(document).ready(function () {
+            //alert("ready!");
+        });
+
+        $(document).keydown(function (e) {
+            switch (e.which) {
+                case 37: // left
+                    player.xCurrentPosition = player.xCurrentPosition - player.velocity;
+                    $(".player").css("margin-left", player.xCurrentPosition);
+                    break;
+
+                case 38: // up
+                    break;
+
+                case 39: // right
+                    player.xCurrentPosition = player.xCurrentPosition + player.velocity;
+                    $(".player").css("margin-left", player.xCurrentPosition);
+                case 40: // down
+                    break;
+
+                default: return; // exit this handler for other keys
+            }
+            e.preventDefault(); // prevent the default action (scroll / move caret)
+        });
+    </script>
+
+
+
+</body>
+
+
+
+
+</html>

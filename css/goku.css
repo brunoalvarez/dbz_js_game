@@ -1,0 +1,158 @@
+#arvore_do_mal {
+    background: url(../images/NPC_325.gif);
+    width: 248px;
+    height: 188px;
+    background-repeat: no-repeat;
+}
+
+.goku {
+    background: url(../images/goku.png);
+    width: 55px;
+    height: 72px;
+    background-repeat: no-repeat;
+    background-position-y: -16px;
+    
+}
+
+.goku-stand{
+    animation: goku-stand 1.0s steps(4) infinite; 
+}
+
+.goku-walk{
+    background-position-y: -100px;
+    width: 60px;
+    animation: goku-stand 1.0s steps(4) infinite;
+    
+}
+
+
+.goku-dash{
+    background-position-y: -174px;
+    width: 60px;
+    height: 58px;
+    animation: goku-dash 1.0s steps(2) infinite; 
+}
+
+
+.goku-jump {
+    background-position-y: -248px !important;
+    /* animation: goku-jump 0.8s steps(7) infinite; */
+    width: 60px;
+    height: 71px;
+
+}
+
+.goku-hameha{
+    animation: goku-hameha 2.0s steps(13) infinite;
+    background-position-y: -1758px;
+
+}
+
+.goku-jump-sprite {
+    background-position-y: -246px !important;
+    /* background-position-x: -62px; */
+    /* animation: goku-jump 3.0s steps(8) infinite; */
+    width: 400px;
+    height: 80px;
+}
+
+.goku-jump2 {
+    background-position-y: -243px !important;
+    animation: goku-jump 3.0s steps(7) infinite;
+}
+
+
+.player{
+    position: absolute;
+    margin-bottom: 150px;
+    height: 73px;
+    width: 57px;
+    background-color: red;
+    margin-left: 100px;
+    margin-top: -72px;
+}
+
+
+
+.goku-run-dash-animation
+{
+    animation: goku-run-dash-animation 2.0s steps(4) infinite;
+}
+
+@keyframes goku-run-dash-animation
+{
+    0%{
+        background-position-x: 0px; 
+        
+    }
+    100%{
+        background-position-x: -228px; 
+    }
+    0%
+    {
+         background-position-y: -100px; 
+        background-position-x: -0px; 
+    }
+    100%{
+        background-position-x: -228px; 
+    } 
+    /* 100%{
+        background-position-x: -227px;
+        background-position-y: -100px;
+    } */
+    /* 50%
+    {
+        background-position-x: 0px;
+        background-position-y: -100px;   
+
+    }
+    100%
+    {
+        background-position-x: 0px;
+        background-position-y: -174px; 
+        
+    } */
+}
+
+
+@keyframes goku-stand{
+    from{
+       background-position-x: 0px;     
+    }
+    to{
+        background-position-x: -228px;
+    }
+    /* from{
+        background-position-x: 75px;     
+     }
+     to{
+         background-position-x: -227px;
+     } */
+}
+
+@keyframes goku-dash{
+    from{
+       background-position-x: 0px;     
+    }
+    to{
+        background-position-x: -113px;
+    }
+}
+
+@keyframes goku-jump {
+    from {
+        background-position-x: 0px;        
+    }
+    to {
+        background-position-x: -400px;
+    }
+}
+
+@keyframes goku-hameha {
+    from {
+        background-position-x: 0px;
+           }
+    to {   
+        background-position-x: -735px;
+    }
+}

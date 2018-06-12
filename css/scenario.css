@@ -1,0 +1,31 @@
+#arvore_do_mal {
+    background: url(../images/NPC_325.gif);
+    width: 246px;
+    height: 188px;
+    background-repeat: no-repeat;
+    margin-left: 60%;
+    margin-top: 40%;
+}
+
+#npc{
+    background: url(../images/Mega_Man_1_enemy_Crazy_Razy.gif);
+    background-repeat: no-repeat;
+    width: 129px;
+    height: 131px;
+}
+
+#wrapper {
+    background-color: black;
+    /* for visualization purposes */
+    text-align: center;
+}
+
+#content {
+    background-color: red;
+    /* for visualization purposes */
+    display: inline-block;
+    width: 640px;
+    height: 500px;
+    background: url(../images/Templo_Kamisama.jpg);
+    background-repeat: no-repeat;
+}
