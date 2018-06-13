@@ -8,12 +8,13 @@ goku = {
     goku_player: "#goku_player"
     ,
 
-    walk_dash:function(){        
+    walk_dash:function(){  
             var timerId =  setTimeout(goku.walk, 1000);
-            setTimeout(() => { 
-                clearInterval(timerId);
+            setTimeout(() => {                
                 setTimeout(goku.dash, 2000); }
             , 2000);         
+          
+    
     },
 
     walk: function(){
