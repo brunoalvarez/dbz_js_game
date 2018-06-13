@@ -74,49 +74,21 @@
 
 
 
-.goku-run-dash-animation
+#goku-run-dash-animation
 {
-    animation: goku-run-dash-animation 2.0s steps(4) infinite;
+    width: 60px;
+    height: 58px;
+    background-position-y: -174px;
+    animation: goku-dash 1.0s steps(2),    
+    goku-stand 1.0s steps(4) infinite;    
+    
 }
 
-@keyframes goku-run-dash-animation
-{
-    0%{
-        background-position-x: 0px; 
-        
-    }
-    100%{
-        background-position-x: -228px; 
-    }
-    0%
-    {
-         background-position-y: -100px; 
-        background-position-x: -0px; 
-    }
-    100%{
-        background-position-x: -228px; 
-    } 
-    /* 100%{
-        background-position-x: -227px;
-        background-position-y: -100px;
-    } */
-    /* 50%
-    {
-        background-position-x: 0px;
-        background-position-y: -100px;   
-
-    }
-    100%
-    {
-        background-position-x: 0px;
-        background-position-y: -174px; 
-        
-    } */
-}
 
 
 @keyframes goku-stand{
     from{
+      
        background-position-x: 0px;     
     }
     to{
