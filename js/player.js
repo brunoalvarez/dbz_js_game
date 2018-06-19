@@ -39,22 +39,15 @@ var player_action = player_action || {
         {
             this.collision = true;
             return;    
-        }
-        else if(currentMarginLeft == playerModel.limitsX[0])
-        {
-            this.collision = false;
-            return;
-        }
-        else if(!left && currentMarginLeft >= playerModel.limitsX[1])
+        }       
+        if(!left && currentMarginLeft >= playerModel.limitsX[1])
         {
             this.collision = true;
             return;
         }
-        else if(left)
-        {
-            this.collision = false;
-            return;
-        }
+
+        this.collision = false;
+       
     }
 };
 
@@ -66,16 +59,12 @@ $(document).keydown(function (e) {
     switch (e.which) {
         case 37: // left
             player_action.walk(true);
-            // player.xCurrentPosition = player.xCurrentPosition - player.velocity;
-            // $(".player").css("margin-left", player.xCurrentPosition);
             break;
 
         case 38: // up
             break;
 
         case 39: // right
-            // player.xCurrentPosition = player.xCurrentPosition + player.velocity;
-            // $(".player").css("margin-left", player.xCurrentPosition);
             player_action.walk(false);
         case 40: // down
             break;
