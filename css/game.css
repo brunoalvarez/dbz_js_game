@@ -1,0 +1,10 @@
+
+.player{
+    position: absolute;
+    margin-bottom: 150px;
+    height: 73px;
+    width: 57px;
+    background-color: red;
+    margin-left: 0px;
+    margin-top: -72px;
+}
