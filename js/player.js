@@ -9,7 +9,11 @@ playerModel = {
     positionInitY: "",
     xInitialPosition: 0,
     xCurrentPosition: 0,
-    velocity: 5,
+    yCurrentPosition: 0,
+    velocity:3 ,
+    jump : {
+        yLimit: -200
+    },
 };
 
 
@@ -26,13 +30,38 @@ var player_action = player_action || {
             : (playerModel.xCurrentPosition + playerModel.velocity)
             ;
         }
+
+        goku.dash();
         
         $playerElement.css("margin-left", playerModel.xCurrentPosition);
        
     },
 
-    collisionScenario: function (left) {
+    jump: function(left)
+    {
+        //A cada 1 seg 
 
+        this.collisionScenario(left);
+        if (!this.collision) {
+            // playerModel.xCurrentPosition = left 
+            // ? (playerModel.xCurrentPosition - playerModel.velocity)
+            // : (playerModel.xCurrentPosition + playerModel.velocity)
+            // ;
+            setInterval(function () {
+                //debugger;
+
+                if(parseInt($("#player1").css("margin-top")) > playerModel.jump.yLimit)
+                 {                   
+                    playerModel.yCurrentPosition =   parseInt($("#player1").css("margin-top")); 
+                    $("#player1").css("margin-top", playerModel.yCurrentPosition -1 + "px");
+
+                 }
+              }, 100);
+        }
+    },
+
+    collisionScenario: function (left) {
+        
         var currentMarginLeft = parseInt($playerElement.css("margin-left"));
 
         if(left && currentMarginLeft == playerModel.limitsX[0])
@@ -60,10 +89,8 @@ $(document).keydown(function (e) {
         case 37: // left
             player_action.walk(true);
             break;
-
         case 38: // up
-            break;
-
+            player_action.jump(false);
         case 39: // right
             player_action.walk(false);
         case 40: // down
@@ -71,5 +98,6 @@ $(document).keydown(function (e) {
 
         default: return; // exit this handler for other keys
     }
+
     e.preventDefault(); // prevent the default action (scroll / move caret)
 });
